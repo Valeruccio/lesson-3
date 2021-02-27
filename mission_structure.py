@@ -1,13 +1,14 @@
 import random
 
-while True:
-    number = random.randint(1,100)
+min_number = 1
+max_number = 100
+result = None
+while result != '=':
+    number = random.randint(min_number,max_number)
     print(number)
-    result = input('= > <: ')
-    if result == '=':
-        print('Победа')
-        break
-    elif result == '>':
-        pass
+    result = input('= > (больше) < (меньше): ')
+    if result == '>':
+        min_number = number + 1
     elif result == '<':
-        pass
+        max_number = number - 1
+print('Победа железа над мясом')
